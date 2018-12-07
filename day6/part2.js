@@ -3,16 +3,18 @@ var _ = require('lodash');
 
 console.log('..start..')
 
-// aaaaa.cccc
-// aAaaa.cccc
-// aaaddecccc
-// aadddeccCc
-// ..dDdeeccc
-// bb.deEeecc
-// bBb.eeee..
-// bbb.eeefff
-// bbb.eeffff
-// bbb.ffffFf
+// 4, 12, 24, 40
+//..........
+//....#.....
+//...#A#....
+//....#.....
+//..........
+
+//....#.....
+//...###....
+//..##A##...
+//...###....
+//....#.....
 
 const input = require('./input.js');
 // const input = `1, 1
@@ -33,7 +35,7 @@ const { xs, ys } = coords.reduce((accum, {x,y}) => {
   accum.ys.push(y);
   return accum;
 }, ({ xs:[], ys:[] }));
-const buffer = 10000;
+const buffer = 10000/2;
 const xMin = Math.min(...xs) - buffer;
 const yMin = Math.min(...ys) - buffer;
 const xMax = Math.max(...xs) + buffer;
@@ -66,3 +68,6 @@ for (let x = xMin; x <= xMax; x++) {
 const keys = Object.keys(areaMap);
 console.log(keys.length);
 console.log('..end..');
+
+// 5554416 too high
+// 37318 correct
