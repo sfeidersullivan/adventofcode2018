@@ -18,4 +18,4 @@ const sum = lines.reduce((accum, line) => {
 }, 0)
 
 
-console.log(sum) // 
+console.log(sum) // 1867
